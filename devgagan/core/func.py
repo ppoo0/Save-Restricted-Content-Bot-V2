@@ -36,13 +36,13 @@ async def subscribe(app, message):
       try:
          user = await app.get_chat_member(update_channel, message.from_user.id)
          if user.status == "kicked":
-            await message.reply_text("You are Banned. Contact -- @devgaganin")
+            await message.reply_text("You are Banned. Contact -- @RAJPUT681830")
             return 1
       except UserNotParticipant:
-         await message.reply_photo(photo="https://graph.org/file/d44f024a08ded19452152.jpg",caption=script.FORCE_MSG.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{url}")]]))
+         await message.reply_photo(photo="https://graph.org/file/e453a252ac9bb3a92506a.jpg",caption=script.FORCE_MSG.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{url}")]]))
          return 1
       except Exception:
-         await message.reply_text("Something Went Wrong. Contact us @devgaganin...")
+         await message.reply_text("Something Went Wrong. Contact us @RAJPUT681830...")
          return 1
 
 
@@ -112,7 +112,7 @@ async def progress_bar(current, total, ud_type, message, start):
         fractional_block = int((percentage % 10) >= 5)  # Add one block for fractional progress if >= 5%
         remaining_blocks = 10 - completed_blocks - fractional_block
 
-        progress = "✅" * completed_blocks + "🟨" * fractional_block + "🟥" * remaining_blocks
+        progress = "✅" * completed_blocks + "💝" * fractional_block + "💌" * remaining_blocks
 
         tmp = progress + PROGRESS_BAR.format( 
             round(percentage, 2),
@@ -263,8 +263,8 @@ async def progress_callback(current, total, progress_message):
     # Build the dynamic progress bar
     progress_bar = "✅" * completed_blocks
     if fractional_progress > 0:
-        progress_bar += "🟨"
-    progress_bar += "🟥" * remaining_blocks
+        progress_bar += "💝"
+    progress_bar += "💌" * remaining_blocks
     
     # Convert bytes to MB (1 MB = 1,000,000 bytes)
     current_mb = current / (1024 * 1024)  # Convert current bytes to MB
@@ -279,7 +279,7 @@ async def progress_callback(current, total, progress_message):
         f"│ **__Progress:__** {percent:.2f}%\n"
         f"│ **__Uploaded:__** {current_mb:.2f} MB / {total_mb:.2f} MB\n"
         f"╰──────────────────╯\n\n"
-        f"**__Powered by Team SPY__**"
+        f"**__Powered by 𝙼𝚁 𝚁𝙰𝙹𝙿𝚄𝚃__**"
     )
 
 async def prog_bar(current, total, ud_type, message, start):
@@ -296,8 +296,8 @@ async def prog_bar(current, total, ud_type, message, start):
         # Build the dynamic progress bar
         progress = "✅" * completed_blocks
         if fractional_progress > 0:
-            progress += "🟨"
-        progress += "🟥" * remaining_blocks
+            progress += "💝"
+        progress += "💌" * remaining_blocks
 
         speed = current / diff
         elapsed_time = round(diff) * 1000
