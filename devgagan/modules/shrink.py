@@ -69,36 +69,41 @@ async def token_handler(client, message):
     join = await subscribe(client, message)
     if join == 1:
         return
-    chat_id = "save_restricted_content_bots"
-    msg = await app.get_messages(chat_id, 796)
+
     user_id = message.chat.id
+
     if len(message.command) <= 1:
         image_url = "https://i.ibb.co/4RrNwDMC/savev2.png"
+
         join_button = InlineKeyboardButton("Join Channel", url="https://t.me/exams_materiel")
         premium = InlineKeyboardButton("Get Premium", url="https://t.me/rajput681830")   
+
         keyboard = InlineKeyboardMarkup([
             [join_button],   
             [premium]    
         ])
          
         await message.reply_photo(
-            msg.photo.file_id,
+            photo=image_url,
             caption=(
                 "Hi 👋 Welcome, Wanna intro...?\n\n"
-                "✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n"
-                "✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more."
+                "✳️ I can save posts from channels or groups where forwarding is off.\n"
+                "✳️ I can download videos/audio from YT, INSTA, etc.\n"
+                "✳️ Simply send the post link of a public channel.\n"
+                "✳️ For private channels, use /login.\n"
+                "✳️ Send /help to know more."
             ),
             reply_markup=keyboard
         )
         return  
- 
+
     param = message.command[1] if len(message.command) > 1 else None
     freecheck = await chk_user(message, user_id)
+
     if freecheck != 1:
         await message.reply("You are a premium user no need of token 😉")
         return
  
-     
     if param:
         if user_id in Param and Param[user_id] == param:
              
@@ -108,9 +113,12 @@ async def token_handler(client, message):
                 "created_at": datetime.utcnow(),
                 "expires_at": datetime.utcnow() + timedelta(hours=3),
             })
+
             del Param[user_id]   
+
             await message.reply("✅ You have been verified successfully! Enjoy your session for next 3 hours.")
             return
+
         else:
             await message.reply("❌ Invalid or expired verification link. Please generate a new token.")
             return
