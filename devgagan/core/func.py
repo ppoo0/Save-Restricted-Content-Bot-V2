@@ -46,7 +46,7 @@ async def subscribe(app, message):
         await message.reply_photo(photo="https://i.ibb.co/4RrNwDMC/savev2.png",caption=caption, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{url}")]]))
         return 1
       except Exception:
-         await message.reply_text("Something Went Wrong. Contact us @devgaganin...")
+         await message.reply_text("Something Went Wrong. Contact us @rajput681830")
          return 1
 async def get_seconds(time_string):
     def extract_value_and_unit(ts):
