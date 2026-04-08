@@ -73,7 +73,7 @@ async def token_handler(client, message):
     user_id = message.chat.id
 
     if len(message.command) <= 1:
-        image_url = "https://i.ibb.co/4RrNwDMC/savev2.png"
+        image_url = "https://graph.org/file/e453a252ac9bb3a92506a.jpg"
 
         join_button = InlineKeyboardButton("Join Channel", url="https://t.me/exams_materiel")
         premium = InlineKeyboardButton("Get Premium", url="https://t.me/rajput681830")   
